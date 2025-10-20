@@ -51,4 +51,6 @@ function isLegalNumber(number) {
 function isLegelSeparator(separators) {
   if (separators.length < 1)
     throw new Error("[ERROR] 구분자를 올바르게 입력해주세요.");
+  if (separators.test(/.*\d.*/))
+    throw new Error("[ERROR] 숫자를 구분자로 이용할 수 없어요.");
 }
