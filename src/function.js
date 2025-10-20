@@ -28,15 +28,22 @@ export function getExpression(input) {
 export function executeExpression(expressions, separators) {
   let stack = "";
   let result = 0;
-  console.log(expressions);
-  console.log(separators);
+
   for (const char of expressions) {
     if (separators.includes(char)) {
-      result += Number(stack);
+      number = Number(stack);
+      isLegalNumber(number);
+      result += number;
       stack = "";
     } else stack += char;
   }
   result += Number(stack);
 
   return result;
+}
+
+function isLegalNumber(number) {
+  if (number < 0) throw new Error("[ERROR] 양수를 입력해주세요.");
+  if (Number.isNaN(number))
+    throw new Error("[ERROR] 올바른 숫자를 입력해주세요.");
 }
