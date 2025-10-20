@@ -37,6 +37,11 @@ export function executeExpression(expressions, separators) {
       stack = "";
     } else stack += char;
   }
+
+  if (stack === "") throw new Error("[ERROR] 구분자로 마무리될 수 없어요.");
+
+  number = Number(stack);
+  isLegalNumber(number);
   result += Number(stack);
 
   return result;
