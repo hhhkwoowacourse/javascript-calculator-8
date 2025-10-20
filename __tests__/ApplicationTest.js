@@ -63,7 +63,7 @@ describe("문자열 계산기", () => {
     });
   });
 
-  test("커스텀 구분자 x와 16진수", async () => {
+ test("커스텀 구분자 x와 16진수", async () => {
     const inputs = ["//x\\n0x01,2,3"];
     mockQuestions(inputs);
 
@@ -75,7 +75,7 @@ describe("문자열 계산기", () => {
 
     outputs.forEach((output) => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
-    });
+    });ㅇ
   });
 
   test("마이너스 커스텀 구분자", async () => {
@@ -90,7 +90,7 @@ describe("문자열 계산기", () => {
 
     outputs.forEach((output) => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
-    });
+    }); 
   });
 
   // 예외 테스트
