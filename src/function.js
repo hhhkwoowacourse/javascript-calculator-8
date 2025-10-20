@@ -9,7 +9,7 @@ export function getCustomSeparator(input) {
   let separators = [":", ","];
   if (hasCustomSeparator(input)) {
     const customSeparators = input.match(pattern)[1];
-
+    isLegelSeparator(customSeparators);
     for (const separator of customSeparators) {
       separators.push(separator);
     }
@@ -46,4 +46,9 @@ function isLegalNumber(number) {
   if (number < 0) throw new Error("[ERROR] 양수를 입력해주세요.");
   if (Number.isNaN(number))
     throw new Error("[ERROR] 올바른 숫자를 입력해주세요.");
+}
+
+function isLegelSeparator(separators) {
+  if (separators.length < 3)
+    throw new Error("[ERROR] 구분자를 올바르게 입력해주세요.");
 }
